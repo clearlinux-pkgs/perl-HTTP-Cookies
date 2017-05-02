@@ -4,7 +4,7 @@
 #
 Name     : perl-HTTP-Cookies
 Version  : 6.01
-Release  : 9
+Release  : 10
 URL      : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTTP-Cookies-6.01.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTTP-Cookies-6.01.tar.gz
 Summary  : HTTP cookie jars
