@@ -4,7 +4,7 @@
 #
 Name     : perl-HTTP-Cookies
 Version  : 6.01
-Release  : 10
+Release  : 11
 URL      : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTTP-Cookies-6.01.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTTP-Cookies-6.01.tar.gz
 Summary  : HTTP cookie jars
@@ -37,6 +37,10 @@ doc components for the perl-HTTP-Cookies package.
 %setup -q -n HTTP-Cookies-6.01
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make V=1  %{?_smp_mflags}
@@ -46,9 +50,10 @@ else
 fi
 
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test
 
 %install
@@ -65,9 +70,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/HTTP/Cookies.pm
-/usr/lib/perl5/site_perl/5.24.0/HTTP/Cookies/Microsoft.pm
-/usr/lib/perl5/site_perl/5.24.0/HTTP/Cookies/Netscape.pm
+/usr/lib/perl5/site_perl/5.26.0/HTTP/Cookies.pm
+/usr/lib/perl5/site_perl/5.26.0/HTTP/Cookies/Microsoft.pm
+/usr/lib/perl5/site_perl/5.26.0/HTTP/Cookies/Netscape.pm
 
 %files doc
 %defattr(-,root,root,-)
