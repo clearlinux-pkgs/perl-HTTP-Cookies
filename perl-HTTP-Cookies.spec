@@ -86,9 +86,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/HTTP/Cookies.pm
-/usr/lib/perl5/vendor_perl/5.28.0/HTTP/Cookies/Microsoft.pm
-/usr/lib/perl5/vendor_perl/5.28.0/HTTP/Cookies/Netscape.pm
+/usr/lib/perl5/vendor_perl/5.28.1HTTP/Cookies.pm
+/usr/lib/perl5/vendor_perl/5.28.1HTTP/Cookies/Microsoft.pm
+/usr/lib/perl5/vendor_perl/5.28.1HTTP/Cookies/Netscape.pm
 
 %files dev
 %defattr(-,root,root,-)
