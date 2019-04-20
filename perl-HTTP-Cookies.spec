@@ -4,10 +4,10 @@
 #
 Name     : perl-HTTP-Cookies
 Version  : 6.04
-Release  : 24
+Release  : 25
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.04.tar.gz
-Summary  : 'HTTP cookie jars'
+Summary  : HTTP cookie jars
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-HTTP-Cookies-license = %{version}-%{release}
@@ -34,6 +34,7 @@ autosave => 1,
 Summary: dev components for the perl-HTTP-Cookies package.
 Group: Development
 Provides: perl-HTTP-Cookies-devel = %{version}-%{release}
+Requires: perl-HTTP-Cookies = %{version}-%{release}
 
 %description dev
 dev components for the perl-HTTP-Cookies package.
