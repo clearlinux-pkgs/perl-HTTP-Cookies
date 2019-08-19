@@ -1,2 +1,4 @@
 # This file contains the output files that need %exclude. Full path
 # names, one per line.
+/usr/lib/perl5/vendor_perl/*/HTTP/Cookies/Microsoft.pm
+/usr/share/man/man3/HTTP::Cookies::Microsoft.3

@@ -4,10 +4,10 @@
 #
 Name     : perl-HTTP-Cookies
 Version  : 6.04
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.04.tar.gz
-Summary  : HTTP cookie jars
+Summary  : 'HTTP cookie jars'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-HTTP-Cookies-license = %{version}-%{release}
@@ -55,7 +55,7 @@ license components for the perl-HTTP-Cookies package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -65,7 +65,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -84,17 +84,18 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+## Remove excluded files
+rm -f %{buildroot}/usr/lib/perl5/vendor_perl/*/HTTP/Cookies/Microsoft.pm
+rm -f %{buildroot}/usr/share/man/man3/HTTP::Cookies::Microsoft.3
 
 %files
 %defattr(-,root,root,-)
 /usr/lib/perl5/vendor_perl/5.28.2/HTTP/Cookies.pm
-/usr/lib/perl5/vendor_perl/5.28.2/HTTP/Cookies/Microsoft.pm
 /usr/lib/perl5/vendor_perl/5.28.2/HTTP/Cookies/Netscape.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/HTTP::Cookies.3
-/usr/share/man/man3/HTTP::Cookies::Microsoft.3
 /usr/share/man/man3/HTTP::Cookies::Netscape.3
 
 %files license
