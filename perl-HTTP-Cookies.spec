@@ -4,14 +4,14 @@
 #
 Name     : perl-HTTP-Cookies
 Version  : 6.05
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.05.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.05.tar.gz
 Summary  : 'HTTP cookie jars'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
-Requires: perl-HTTP-Cookies-data = %{version}-%{release}
 Requires: perl-HTTP-Cookies-license = %{version}-%{release}
+Requires: perl-HTTP-Cookies-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(HTTP::Date)
 BuildRequires : perl(HTTP::Headers::Util)
@@ -31,18 +31,9 @@ file => "$ENV{'HOME'}/lwp_cookies.dat",
 autosave => 1,
 );
 
-%package data
-Summary: data components for the perl-HTTP-Cookies package.
-Group: Data
-
-%description data
-data components for the perl-HTTP-Cookies package.
-
-
 %package dev
 Summary: dev components for the perl-HTTP-Cookies package.
 Group: Development
-Requires: perl-HTTP-Cookies-data = %{version}-%{release}
 Provides: perl-HTTP-Cookies-devel = %{version}-%{release}
 Requires: perl-HTTP-Cookies = %{version}-%{release}
 
@@ -56,6 +47,15 @@ Group: Default
 
 %description license
 license components for the perl-HTTP-Cookies package.
+
+
+%package perl
+Summary: perl components for the perl-HTTP-Cookies package.
+Group: Default
+Requires: perl-HTTP-Cookies = %{version}-%{release}
+
+%description perl
+perl components for the perl-HTTP-Cookies package.
 
 
 %prep
@@ -101,11 +101,6 @@ rm -f %{buildroot}/usr/share/man/man3/HTTP::Cookies::Microsoft.3
 %files
 %defattr(-,root,root,-)
 
-%files data
-%defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/HTTP/Cookies.pm
-/usr/lib/perl5/vendor_perl/5.28.2/HTTP/Cookies/Netscape.pm
-
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/HTTP::Cookies.3
@@ -114,3 +109,8 @@ rm -f %{buildroot}/usr/share/man/man3/HTTP::Cookies::Microsoft.3
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-HTTP-Cookies/8d6e0b564495c0902e07259e61ef783c8fa9617f
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/HTTP/Cookies.pm
+/usr/lib/perl5/vendor_perl/5.28.2/HTTP/Cookies/Netscape.pm
