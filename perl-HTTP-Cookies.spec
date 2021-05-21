@@ -118,5 +118,5 @@ rm -f %{buildroot}/usr/share/man/man3/HTTP::Cookies::Microsoft.3
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/HTTP/Cookies.pm
-/usr/lib/perl5/vendor_perl/5.32.1/HTTP/Cookies/Netscape.pm
+/usr/lib/perl5/vendor_perl/5.34.0/HTTP/Cookies.pm
+/usr/lib/perl5/vendor_perl/5.34.0/HTTP/Cookies/Netscape.pm
