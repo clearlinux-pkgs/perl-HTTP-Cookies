@@ -4,7 +4,7 @@
 #
 Name     : perl-HTTP-Cookies
 Version  : 6.10
-Release  : 44
+Release  : 45
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.10.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.10.tar.gz
 Summary  : 'HTTP cookie jars'
@@ -101,8 +101,8 @@ find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
 ## Remove excluded files
-rm -f %{buildroot}/usr/lib/perl5/vendor_perl/*/HTTP/Cookies/Microsoft.pm
-rm -f %{buildroot}/usr/share/man/man3/HTTP::Cookies::Microsoft.3
+rm -f %{buildroot}*/usr/lib/perl5/vendor_perl/*/HTTP/Cookies/Microsoft.pm
+rm -f %{buildroot}*/usr/share/man/man3/HTTP::Cookies::Microsoft.3
 
 %files
 %defattr(-,root,root,-)
@@ -118,5 +118,4 @@ rm -f %{buildroot}/usr/share/man/man3/HTTP::Cookies::Microsoft.3
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/HTTP/Cookies.pm
-/usr/lib/perl5/vendor_perl/5.34.0/HTTP/Cookies/Netscape.pm
+/usr/lib/perl5/*
