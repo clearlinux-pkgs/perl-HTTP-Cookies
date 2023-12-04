@@ -5,7 +5,7 @@
 #
 Name     : perl-HTTP-Cookies
 Version  : 6.10
-Release  : 48
+Release  : 49
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.10.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.10.tar.gz
 Summary  : 'HTTP cookie jars'
